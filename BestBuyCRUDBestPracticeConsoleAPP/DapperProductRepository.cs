@@ -24,9 +24,11 @@ namespace BestBuyCRUDBestPracticeConsoleAPP
             return depos;
         }
 
-        public void CreateProduct(string name, int price, int categoryId, int onSale, string stockLevel)
+        public void CreateProduct(string name, decimal price, int categoryId, int onSale, string stockLevel)
         {
-            throw new NotImplementedException();
+            _connection.Execute("INSERT INTO PRODUCTS (name, price, categoryId, onSale, stockLevel) " +
+                "VALUES (@name, @price, @categoryId, @onSale, @stockLevel);",
+                new { name = name, price = price, categoryId = categoryId, onSale = onSale, stockLevel = stockLevel});
         }
 
         

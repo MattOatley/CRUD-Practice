@@ -4,7 +4,14 @@ using System.Text;
 
 namespace BestBuyCRUDBestPracticeConsoleAPP
 {
-    class Product
+    public class Product
     {
+        public int productId { get; set; }
+        public string name { get; set; }
+        public decimal price { get; set; }
+        public int categoryId { get; set; }
+        public int onSale { get; set; }
+        public string stockLevel { get; set; }
+
     }
 }
